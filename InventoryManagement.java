@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class InventoryManagement {
 	public static void main(String[] args) {
+		
+		//Variable declaration
 		int numSoda = 100;
 		int numChips = 40;
 		int numCandy = 60;
@@ -17,11 +19,14 @@ public class InventoryManagement {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		//Intro message
 		System.out.println("Hello! Welcome to the restocking tool!");
 		
 		System.out.println("How many sodas have been sold today? The stock is " + numSoda);
 		sodaSold = sc.nextInt();
 		
+		/*If the amount of sodas sold exceeds the numbers of Soda available in stock, display error message
+		and do not calculate */
 		if (sodaSold > numSoda) {
 			System.out.println("The number " + sodaSold + " is too high. Stock value not adjusted");
 		} else {
@@ -29,6 +34,7 @@ public class InventoryManagement {
 			System.out.println("There are " + numSoda + " sodas left");
 		}
 		
+		//Repeat for Chips sold
 		System.out.println("How many chips have been sold today? The stock is " + numChips);
 		chipsSold = sc.nextInt();
 		
@@ -39,6 +45,7 @@ public class InventoryManagement {
 			System.out.println("There are " + numChips + " chips left");
 		}
 		
+		//Repeat for number of Candy sold
 		System.out.println("How much candy has been sold today? The stock is " + numCandy);
 		candySold = sc.nextInt();
 		
@@ -51,6 +58,8 @@ public class InventoryManagement {
 		
 		System.out.println("Thank you! Based on your input, these need to be restocked: ");
 		
+		/* If number of product remaining is less than the restock threshold, display a message
+		   indicating the product needs to be restocked */
 		if(numSoda <= restockSoda) {
 			System.out.println("Soda needs to be restocked");
 		}
@@ -61,6 +70,8 @@ public class InventoryManagement {
 		
 		if(numCandy <= restockCandy) {
 			System.out.println("Candy needs to be restocked");
+			
+		System.out.println("Good bye!");
 		}
 	}
 }
